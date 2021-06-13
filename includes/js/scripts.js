@@ -69,7 +69,11 @@ var wpcf7c_to_step1 = function(parent, scroll){
 	var responseOutput = parent.find('div.wpcf7-response-output');
 	responseOutput.removeClass("wpcf7c-force-hide");
 	responseOutput.removeClass("wpcf7-mail-sent-ng");
-	responseOutput.css("display", "none");
+
+	if(scroll){
+		//responseOutput.css("display", "none");
+		responseOutput.addClass("wpcf7c-force-hide");
+	}
 
 	parent.find(".ajax-loader").addClass("wpcf7c-elm-step2").addClass("wpcf7c-force-hide");
 
@@ -220,11 +224,37 @@ var wpcf7c_step2_error = function(unit_tag) {
 document.addEventListener( 'wpcf7submit', function( event ) {
 	switch ( event.detail.status ) {
 		case 'wpcf7c_confirmed':
-		wpcf7c_step1(event.detail.id);
+		wpcf7c_step1(event.detail.unitTag);
 		break;
 		case 'mail_sent':
-		wpcf7c_step2(event.detail.id);
+		wpcf7c_step2(event.detail.unitTag);
 		break;
 
 	}
 }, false );
+
+jQuery(function($) {
+	
+	var $submit = $('.wpcf7-submit');
+	var $confirm = $('.wpcf7-confirm');
+	var $policy = $('.policy input[type="checkbox"]');
+	let result = $submit.prop('disabled');
+ 	
+  if(result) {
+        $confirm.prop('disabled', true);
+  }else {
+        $confirm.prop('disabled', false);
+  }
+	
+	$policy.change(function() {
+		let result = $policy.prop('checked');
+	
+    if(result) {
+        //disabled属性を解除
+        $confirm.prop('disabled', false);
+    }else {
+        //disabled属性を付与
+        $confirm.prop('disabled', true);
+    }
+})
+});
