@@ -8,7 +8,7 @@ Contact form 7 と組み合わせて利用するプラグインです。確認�
 
 動作確認は、Contact form 7 ver 5.4.1 [[Download Link]](https://downloads.wordpress.org/plugin/contact-form-7.5.4.1.zip)と組み合わせてWordPress5.7.2で行いました。reCAPTCHAは、v3を使っています。（v2は未確認）
 
-#example
+# example
 以下のように動作します。
 > https://junkhack.gpl.jp/sendmail/
 
@@ -19,7 +19,7 @@ Contact form 7 と組み合わせて利用するプラグインです。確認�
 ### Step3
 ![](./docimg/example3.png)
 
-#修正方法
+# 修正方法
 この修正方法は、以下サイトで紹介されていたものを行ったのみです。
 [[オランダで生きていく]](https://nldot.info/how-to-fix-the-contact-form-7-add-confirm-response-to-the-latest-cf7/)
 
@@ -30,6 +30,6 @@ Contact form 7 と組み合わせて利用するプラグインです。確認�
 
 なお、exampleサイトではこの機能は別実装にしていますので、これが動作するかは未確認です。
 
-#ブログに遊びにきてね
+# ブログに遊びにきてね
 JunkHackというブログをやっていますので、是非遊びにきてください。
 > [アリエクでポチった JUNKHACK](https://junkhack.gpl.jp/)
